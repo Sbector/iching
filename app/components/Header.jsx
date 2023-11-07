@@ -3,16 +3,16 @@ import Link from "next/link"
 
 const links = [{
   label: 'home',
-  route: '/'
+  route: './'
 },{
   label: 'about',
-  route: '/about'
+  route: './about'
 },{
   label: 'instructions',
-  route: '/instructions'
+  route: './instructions'
 },{
   label: 'consult',
-  route: '/consult'
+  route: './consult'
 }]
 
 export default function Header () {

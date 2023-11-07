@@ -14,7 +14,7 @@ export default function Instructions() {
                 Once you have your question ready, you have to throw 6 rounds of three coins. This app, will help you
                 to make it virtually.
             </p>
-            <a href="/consult">
+            <a href="./consult">
                 <button>Throw coins!</button>
             </a>
         </div>

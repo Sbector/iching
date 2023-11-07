@@ -16,8 +16,8 @@ export default function AboutPage() {
             <p>This tool is concieved to help you in your first approach to the book. So first of all
                 you need to have the book.<br/>
                 <br/>
-                Once you have the book on your hands or your screen, you can go to the <a href="/">homepage</a> and click
-                on the "I have a question button".
+                Once you have the book on your hands or your screen, you can go to the <a href="./instructions">instructions</a> and 
+                click on the "I have a question button".
             </p>
         </div> 
     )
