@@ -6,7 +6,7 @@ export default function HomePage() {
       </div>
       <div>
         <h2>Do you have a question for the iching?</h2>
-        <a href="/instructions">
+        <a href="/consult">
           <button>I have a question</button>
         </a>
         <a href="/about">

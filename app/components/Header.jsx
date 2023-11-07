@@ -7,6 +7,12 @@ const links = [{
 },{
   label: 'about',
   route: '/about'
+},{
+  label: 'instructions',
+  route: '/instructions'
+},{
+  label: 'consult',
+  route: '/consult'
 }]
 
 export default function Header () {
