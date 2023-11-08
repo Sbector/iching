@@ -13,3 +13,6 @@ jobs:
             - name: Echo the message
               run: |
                 echo "Hola, Saúl"
+            - name: Fecha
+              run: date
+            - run: ls -l
