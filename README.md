@@ -1,4 +1,4 @@
-[![Say hello](https://github.com/Sbector/iching/actions/workflows/hello.yml/badge.svg)](https://github.com/Sbector/iching/actions/workflows/hello.yml)
+[![Deployment Pipeline](https://github.com/Sbector/iching/actions/workflows/pipeline.yml/badge.svg)](https://github.com/Sbector/iching/actions/workflows/pipeline.yml))
 
 ## ICHING
 
