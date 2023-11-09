@@ -1,5 +1,19 @@
-export default function coins() {
+import CoinToss from "../components/CoinToss";
+import Question from "../components/Question";
+
+export default function Consult() {
     return(
-        <h1>Throw coins!</h1>
+        <div>
+            <h1>Let make a consult!</h1>
+            <Question/>
+            <div>
+                <CoinToss/>
+                <CoinToss/>
+                <CoinToss/>
+                <CoinToss/>
+                <CoinToss/>
+                <CoinToss/>
+            </div>
+        </div>
     )
 }
