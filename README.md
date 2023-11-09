@@ -2,7 +2,7 @@
 
 ## ICHING
 
-This is a web app in construction that will help new readers of the I ching to make their fist consults and take record of those.
+This is a web app in construction that will help new readers of the I ching to make their fist consults and record them.
 
 ## Install and run locally
 
