@@ -1,5 +1,6 @@
 'use client'
 import { useState } from "react"
+import Button from "./Button";
 
 export default function CoinToss() {
     const [coinResults, setCoinResults] = useState([])
@@ -17,7 +18,7 @@ export default function CoinToss() {
   
     return (
       <div>
-        <button onClick={tossCoins}>Toss Coins</button>
+        <Button onClick={tossCoins}>Toss Coins</Button>
         <p>{coinResults}</p>
       </div>
     )

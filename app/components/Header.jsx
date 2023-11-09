@@ -1,4 +1,3 @@
-import styles from './Header.module.css'
 import Link from "next/link"
 
 const links = [{
@@ -17,12 +16,12 @@ const links = [{
 
 export default function Header () {
     return(
-        <header className={styles.header}>
-          <nav>
-            <ul className={styles.navigation}>
+        <header className="m-4">
+          <nav class="flex items-center justify-between flex-wrap bg-gray-200 p-6 rounded-lg">
+            <ul className="flex">
               {links.map(({ label, route }) => (
-                <li key={route}>
-                  <Link href={route}>{label}</Link>
+                <li key={route} className="mr-6">
+                  <Link href={route} className="text-gray-500 hover:text-gray-900">{label}</Link>
                 </li>
               ))}
             </ul>

@@ -10,9 +10,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       
-      <body>
+      <body className='bg-white dark:bg-black'>
         <Header/>
+        <div className='m-4 text-black dark:text-white'>
         {children}
+        </div>
       </body>
     </html>
   )

@@ -1,16 +1,18 @@
+import Button from "./components/Button"
+
 export default function HomePage() {
   return (
     <div>
       <div>
-        <h1>Whelcome to <span>iching</span>!</h1>
+        <h1 className="text-xl">Whelcome to <span>iching</span>!</h1>
       </div>
       <div>
-        <h2>Do you have a question for the iching?</h2>
+        <p>Do you have a question for the iching?</p>
         <a href="./consult">
-          <button>I have a question</button>
+          <Button>I have a question</Button>
         </a>
         <a href="./about">
-        <button>What is iching?</button>
+        <Button>What is iching?</Button>
         </a>
       </div>
     </div>
