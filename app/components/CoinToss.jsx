@@ -23,9 +23,9 @@ export default function CoinToss() {
   
     return (
       <div>
-        <a onClick={tossCoins}>
-        <Button>Toss Coins</Button>
-        </a>
+        <Button onClick={tossCoins}>
+          Toss Coins
+        </Button>  
         {coinResults.map((tossResult, index) => (
           <p key={index}>Toss {index + 1}: {tossResult.join(', ')}</p>
         ))}
