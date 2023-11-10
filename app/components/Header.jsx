@@ -16,11 +16,16 @@ const links = [{
 
 export default function Header () {
     return(
-        <header className="m-4">
-          <nav class="flex items-center justify-between flex-wrap bg-gray-200 p-6 rounded-lg">
-            <ul className="flex">
+        <header className="m-2">
+          <div className="py-4 text-center">
+            <a href="./">
+              <h1 className="text-gray-200 text-3xl pb-2 m-4">I ching <span className="text-2xl">online</span></h1>
+            </a>
+          </div>
+          <nav className="bg-gray-200 py-1 px-2 rounded-lg max-w-fit mx-auto mb-10">
+            <ul className=" flex justify-start flex-wrap">
               {links.map(({ label, route }) => (
-                <li key={route} className="mr-6">
+                <li key={route} className="mx-4">
                   <Link href={route} className="text-gray-500 hover:text-gray-900">{label}</Link>
                 </li>
               ))}
