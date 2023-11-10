@@ -1,4 +1,5 @@
 import Button from "./components/Button"
+import Link from "next/link"
 
 export default function HomePage() {
   return (
@@ -8,12 +9,12 @@ export default function HomePage() {
       </div>
       <p className="text-xl mb-5">Do you have a question for the i ching?</p>
       <div className="mx-auto">
-        <a href="./consult">
-          <Button>I have a question</Button>
-        </a>
-        <a href="./about">
-        <Button>What is iching?</Button>
-        </a>
+       <Link href="./consult">
+       <Button>I have a question</Button>
+       </Link>
+       <Link href="./about">
+       <Button>What is iching?</Button>
+       </Link>
       </div>
     </div>
   )

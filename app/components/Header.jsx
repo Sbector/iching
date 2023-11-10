@@ -11,16 +11,14 @@ const links = [{
   route: './instructions'
 },{
   label: 'consult',
-  route: './consult'
+  route: './consult'  
 }]
 
 export default function Header () {
     return(
         <header className="m-2">
           <div className="py-4 text-center">
-            <a href="./">
-              <h1 className="text-gray-200 text-3xl pb-2 m-4">I ching <span className="text-2xl">online</span></h1>
-            </a>
+            <Link href="./" className="text-gray-800 dark:text-gray-200 text-3xl pb-2 m-4">I ching <span className="text-2xl">online</span></Link>
           </div>
           <nav className="bg-gray-200 py-1 px-2 rounded-lg max-w-fit mx-auto mb-10">
             <ul className=" flex justify-start flex-wrap">
