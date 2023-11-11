@@ -1,6 +1,6 @@
 export default function AboutPage() {
     return(
-        <div>
+        <div className="text-left">
             <h1 className="text-4xl mb-4">About</h1>
             <p>
                 This is an online tool that will help you to ask questions to the book of changes <i>I ching</i>.
@@ -20,7 +20,7 @@ export default function AboutPage() {
                 you need to have the book.
                 <br/>
                 Once you have the book on your hands or your screen, you can go to the <a href="./instructions">instructions</a> and 
-                click on the &quot;I have a question button&quot;.
+                click on the &quot;I have a question&quot; button.
             </p>
         </div> 
     )

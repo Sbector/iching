@@ -1,6 +1,6 @@
 export default function Instructions() {
     return (
-        <div>
+        <div className="text-left">
             <h1 className="text-4xl mb-4">Instructions</h1>
 
             <h2 className="text-xl mb-2">Prepare your question</h2>

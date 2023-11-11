@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export default function HomePage() {
   return (
-    <div className="flex h-screen justify-between text-center items-center">
+    <section className="text-center place-self-center">
       <div>
         <h1 className="text-4xl mb-4">Welcome!</h1>
         <p className="text-xl mb-5">Do you have a question for the i ching?</p>
@@ -16,6 +16,6 @@ export default function HomePage() {
        <Button>What is iching?</Button>
        </Link>
       </div>
-    </div>
+    </section>
   )
 }
