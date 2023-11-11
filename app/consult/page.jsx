@@ -2,13 +2,12 @@ import CoinToss from "../components/CoinToss";
 import Question from "../components/Question";
 
 export default function Consult() {
-    return(
+    return (
         <section className="text-center">
-            <h1 className="text-xl mb-6">Let make a consult!</h1>
-            <Question/>
+            <h1 className="text-4xl m-10">Let make a consult!</h1>
+            <Question />
             <div>
-                <CoinToss/>
-                
+                <CoinToss />
             </div>
         </section>
     )

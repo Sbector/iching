@@ -8,10 +8,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className='bg-white dark:bg-black'>
-      <body className='flex flex-col flex-wrap items-center'>
+    <html lang="en" className='bg-white dark:bg-black box-border'>
+      <body className='flex flex-col flex-wrap items-center max-w-screen overflow-x-hidden'>
           <Header/>
-          <main className='flex text-black dark:text-white h-[calc(100vh-200px)] mt-10 m-4 p-6 max-w-screen-md min-h-full'>
+          <main className='flex text-black dark:text-white min-h-[calc(100vh-150px)] m-4 p-6 max-w-screen-md'>
             {children}
           </main>  
       </body>
