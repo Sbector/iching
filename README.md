@@ -1,22 +1,15 @@
-[![Deploy Next.js site to Pages](https://github.com/Sbector/iching/actions/workflows/nextjs.yml/badge.svg)](https://github.com/Sbector/iching/actions/workflows/nextjs.yml)
+# Paricutin, 2023
+## Fotogrametría
 
-## ICHING
+Esta representación visual surge de una roca volcánica extraída del Paricutín, un volcán que
+fue ampliamente retratado y documentado durante su nacimiento por el artista Gerardo
+Murillo, conocido como "Dr. Atl". A través de la técnica de fotogrametría, esta pieza adquiere
+vida en un espacio virtual independiente de relaciones preestablecidas, donde su presencia
+adquiere múltiples significados para el ámbito científico, estético y filosófico.
 
-This is a web app in construction that will help new readers of the I ching to make their fist consults and record them.
+La elección de la palabra "Paricutin” escrita en forma esdrújula preserva la autenticidad de
+su pronunciación en lengua purépecha, evocando la esencia de su origen.
 
-## Install and run locally
-
-First, install the dependencies:
-
-```bash
-npm i
-```
-
-Then, run the development server:
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000)
-
+Paricutin se aventura en la convergencia de la geología, la tecnología y la filosofía en el arte
+contemporáneo. Esta obra, en su esencia virtual, trasciende las barreras físicas y narrativas,
+invitando a reflexionar sobre la relación entre la naturaleza, la percepción y la creación.
