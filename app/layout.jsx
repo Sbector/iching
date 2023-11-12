@@ -2,8 +2,8 @@ import Header from './components/Header'
 import './globals.css'
 
 export const metadata = {
-  title: 'paricutin',
-  description: '3d display',
+  title: 'I ching',
+  description: 'An asistent for I ching reading',
 }
 
 export default function RootLayout({ children }) {
