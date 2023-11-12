@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export default function AboutPage() {
     return(
         <div className="text-left">
@@ -19,7 +21,7 @@ export default function AboutPage() {
             <p>This tool is concieved to help you in your first approach to the book. So first of all
                 you need to have the book.
                 <br/>
-                Once you have the book on your hands or your screen, you can go to the <a href="./instructions">instructions</a> and 
+                Once you have the book on your hands or your screen, you can go to the <Link className="text-green-600" href="./instructions">instructions</Link> and 
                 click on the &quot;I have a question&quot; button.
             </p>
         </div> 
