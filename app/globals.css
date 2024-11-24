@@ -5,3 +5,12 @@
 * { 	
     -webkit-tap-highlight-color: rgba(0,0,0,0);
  }
+
+ @layer components {
+    .title {
+        @apply text-4xl mb-4;
+    }
+    .subtitle {
+        @apply text-xl mb-2;
+    }
+ }
