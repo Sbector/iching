@@ -16,7 +16,7 @@ const links = [{
 
 export default function Header () {
     return(
-        <header className="sticky top-0 z-50 w-screen h-[100px] bg-white dark:bg-black text-center">
+        <header className="sticky top-0 z-50 w-screen h-[85px] bg-white dark:bg-black text-center">
           <div className="py-3">
             <Link href="./" className="text-gray-800 dark:text-gray-200 text-3xl">I ching <span className="text-2xl">online</span></Link>
           </div>

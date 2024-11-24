@@ -5,7 +5,7 @@ import ContentWrapper from "./_components/ContentWrapper"
 export default function HomePage() {
   return (
     <ContentWrapper className="justify-center">
-      <div>
+      <div className="mt-[-40px]">
         <h1 className="title">Welcome!</h1>
         <h2 className="subtitle">Do you have a question for the I ching?</h2>
       </div>
