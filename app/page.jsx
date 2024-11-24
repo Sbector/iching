@@ -1,12 +1,13 @@
-import Button from "./components/Button"
+import Button from "./_components/Button"
 import Link from "next/link"
+import ContentWrapper from "./_components/ContentWrapper"
 
 export default function HomePage() {
   return (
-    <section className="text-center place-self-center">
+    <ContentWrapper className="justify-center mt-[-100px]">
       <div>
-        <h1 className="text-4xl mb-4">Welcome!</h1>
-        <p className="text-xl mb-5">Do you have a question for the i ching?</p>
+        <h1 className="title">Welcome!</h1>
+        <h2 className="subtitle">Do you have a question for the I ching?</h2>
       </div>
       <div className="mx-auto">
        <Link href="./consult">
@@ -16,6 +17,6 @@ export default function HomePage() {
        <Button>What is iching?</Button>
        </Link>
       </div>
-    </section>
+    </ContentWrapper>
   )
 }

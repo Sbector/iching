@@ -1,14 +1,15 @@
-import CoinToss from "../components/CoinToss";
-import Question from "../components/Question";
+import CoinToss from "../_components/CoinToss";
+import ContentWrapper from "../_components/ContentWrapper";
+import Question from "../_components/Question";
 
 export default function Consult() {
     return (
-        <section className="text-center">
-            <h1 className="text-4xl m-10">Let make a consult!</h1>
+        <ContentWrapper className="">
+            <h1 className="title">Let consult the I ching!</h1>
             <Question />
             <div>
                 <CoinToss />
             </div>
-        </section>
+        </ContentWrapper>
     )
 }
