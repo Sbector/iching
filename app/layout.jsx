@@ -10,11 +10,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className='bg-white dark:bg-black text-black dark:text-white box-border'>
-      <body className='flex flex-col flex-wrap items-center max-w-screen overflow-x-hidden'>
-          <Header/>
-          <PageWrapper className='flex  min-h-[calc(100vh-150px)] m-4 p-6 max-w-screen-md'>
-            {children}
-          </PageWrapper>
+      <body className='max-w-screen overflow-x-hidden'>
+        <Header />
+        <PageWrapper>
+          {children}
+        </PageWrapper>
       </body>
     </html>
   )

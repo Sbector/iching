@@ -1,9 +1,8 @@
 import Link from "next/link"
-import ContentWrapper from "../_components/ContentWrapper"
 
 export default function AboutPage() {
     return (
-        <ContentWrapper className="text-left">
+        <div>
             <h1 className="title">About</h1>
             <p>
                 This is an online tool that will help you to ask questions to the book of changes <i>I ching</i>.
@@ -25,6 +24,6 @@ export default function AboutPage() {
                 Once you have the book on your hands or your screen, you can go to the <Link className="text-green-600" href="./instructions">instructions</Link> and
                 click on the &quot;I have a question&quot; button.
             </p>
-        </ContentWrapper>
+        </div>
     )
 }

@@ -1,10 +1,9 @@
 import Button from "../_components/Button"
 import Link from "next/link"
-import ContentWrapper from "../_components/ContentWrapper"
 
 export default function Instructions() {
     return (
-        <ContentWrapper className="">
+        <div>
             <h1 className="title">Instructions</h1>
 
             <h2 className="subtitle">Prepare your question</h2>
@@ -21,6 +20,6 @@ export default function Instructions() {
             <Link href="./consult">
                 <Button>Toss coins</Button>
             </Link>
-        </ContentWrapper>
+        </div>
     )
 }
