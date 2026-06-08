@@ -1,0 +1,97 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { allTrigrams, getTrigramByBinary } from '../../data/trigrams';
+import { allHexagrams } from '../../data/hexagrams';
+
+export async function getStaticPaths() {
+  return allTrigrams.map((trigram) => ({
+    params: { name: trigram.name.toLowerCase() },
+    props: { trigram },
+  }));
+}
+
+interface Props {
+  trigram: (typeof allTrigrams)[number];
+}
+
+const { trigram } = Astro.props;
+
+if (!trigram) {
+  return Astro.redirect('/trigrams');
+}
+
+// Get all hexagrams that contain this trigram
+const hexagrams = Object.values(allHexagrams).filter(
+  (hex) =>
+    JSON.stringify(hex.upperTrigram) === JSON.stringify(trigram.binary) ||
+    JSON.stringify(hex.lowerTrigram) === JSON.stringify(trigram.binary)
+);
+
+const asUpper = Object.values(allHexagrams).filter(
+  (hex) => JSON.stringify(hex.upperTrigram) === JSON.stringify(trigram.binary)
+);
+
+const asLower = Object.values(allHexagrams).filter(
+  (hex) => JSON.stringify(hex.lowerTrigram) === JSON.stringify(trigram.binary)
+);
+---
+
+<Layout title={`${trigram.name} | I Ching`} description={`Trigram: ${trigram.name}`}>
+  <div class="py-8 max-w-2xl mx-auto">
+    {/* Header */}
+    <div class="mb-8 text-center">
+      <div class="text-7xl mb-4">{trigram.symbol}</div>
+      <h1 class="title">{trigram.name}</h1>
+      <p class="text-lg text-muted-text">{trigram.element}</p>
+      <p class="text-sm text-muted-text mt-2">Position: {trigram.position}</p>
+    </div>
+
+    {/* Family */}
+    <div class="mb-8 p-6 bg-surface rounded-lg border border-border">
+      <h2 class="subtitle mb-2">Family</h2>
+      <p class="text-foreground">{trigram.family}</p>
+    </div>
+
+    {/* Binary */}
+    <div class="mb-8 p-6 bg-surface rounded-lg border border-border">
+      <h2 class="subtitle mb-4">Structure</h2>
+      <div class="flex flex-col items-center gap-2 font-mono text-lg">
+        {[...trigram.binary].reverse().map((bit, idx) => (
+          <div key={idx} class="text-foreground">
+            {bit === 1 ? '━━━━━' : '━ ━ ━'}
+          </div>
+        ))}
+      </div>
+    </div>
+
+    {/* Hexagrams Using This Trigram */}
+    {hexagrams.length > 0 && (
+      <div class="mb-8 p-6 bg-surface rounded-lg border border-border">
+        <h2 class="subtitle mb-4">Hexagrams with {trigram.name}</h2>
+        <p class="text-sm text-muted-text mb-4">
+          This trigram appears as the upper trigram in {asUpper.length} hexagram(s) and as the lower trigram in{' '}
+          {asLower.length} hexagram(s).
+        </p>
+        <div class="grid grid-cols-6 gap-2">
+          {hexagrams.map((hex) => (
+            <a
+              href={`/hexagrams/${hex.number}`}
+              class="flex flex-col items-center p-3 bg-background rounded border border-border hover:border-accent transition-colors"
+              title={hex.name}
+            >
+              <div class="text-2xl mb-1">{hex.unicodeSymbol}</div>
+              <div class="text-xs text-muted-text">#{hex.number}</div>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+    {/* Navigation */}
+    <div class="flex gap-4">
+      <a href="/trigrams" class="px-4 py-2 bg-button-bg text-button-text rounded-md hover:bg-button-hover transition-colors">
+        ← Back to Trigrams
+      </a>
+    </div>
+  </div>
+</Layout>

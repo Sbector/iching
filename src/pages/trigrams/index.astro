@@ -1,0 +1,46 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { allTrigrams } from '../../data/trigrams';
+import { allHexagrams } from '../../data/hexagrams';
+
+const title = 'Trigrams | I Ching';
+const description = 'The 8 trigrams of the I Ching and their meanings';
+
+// Get all hexagrams that contain each trigram
+const trigramHexagrams = allTrigrams.reduce((acc, trigram) => {
+  const hexagrams = Object.values(allHexagrams).filter(
+    (hex) =>
+      JSON.stringify(hex.upperTrigram) === JSON.stringify(trigram.binary) ||
+      JSON.stringify(hex.lowerTrigram) === JSON.stringify(trigram.binary)
+  );
+  acc[trigram.name] = hexagrams;
+  return acc;
+}, {} as Record<string, typeof allHexagrams[string][]>);
+---
+
+<Layout {title} {description}>
+  <div class="py-8">
+    <h1 class="title">The 8 Trigrams</h1>
+    <p class="text-muted-text mb-8">
+      The fundamental building blocks of the 64 hexagrams. Each trigram represents an element and natural phenomenon.
+    </p>
+
+    <div class="grid grid-cols-2 gap-6 md:grid-cols-4">
+      {allTrigrams.map((trigram) => (
+        <a
+          href={`/trigrams/${trigram.name.toLowerCase()}`}
+          class="flex flex-col items-center p-6 bg-surface rounded-lg border border-border hover:border-accent hover:shadow-lg transition-all"
+        >
+          <div class="text-5xl mb-3">{trigram.symbol}</div>
+          <div class="text-center">
+            <div class="font-semibold text-foreground">{trigram.name}</div>
+            <div class="text-xs text-muted-text mt-1">{trigram.element}</div>
+            <div class="text-xs text-muted-text mt-2">
+              {trigramHexagrams[trigram.name]?.length || 0} hexagrams
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</Layout>

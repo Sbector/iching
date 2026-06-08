@@ -1,19 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import CoinToss from '../components/CoinToss.jsx';
+import ConsultFlow from '../components/ConsultFlow.jsx';
 
 const title = 'Consult | I ching';
-const description = 'Consult the I ching with our virtual coin tossing tool';
+const description = 'Consult the I ching with our consultation tool';
 ---
 
 <Layout {title} {description}>
-  <div>
-    <h1 class="title">Let consult the I ching!</h1>
-    <label for="question" class="text-foreground">Enter your question</label>
-    <br />
-    <textarea id="question" type="text" name="question" class="min-w-full bg-surface text-foreground border border-border rounded-md p-2 mt-2"></textarea>
-    <div>
-      <CoinToss client:load />
-    </div>
+  <div class="py-8">
+    <h1 class="title">Consult the I Ching</h1>
+    <p class="text-muted-text mb-8">Take a sincere question and let the I Ching guide your reading</p>
+    <ConsultFlow client:load />
   </div>
 </Layout>

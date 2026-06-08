@@ -1,0 +1,74 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getHexagram, allHexagrams } from '../../data/hexagrams';
+import { getTrigramByName } from '../../data/trigrams';
+
+export async function getStaticPaths() {
+  return Object.values(allHexagrams).map((hexagram) => ({
+    params: { id: String(hexagram.number) },
+    props: { hexagram },
+  }));
+}
+
+interface Props {
+  hexagram: typeof allHexagrams[string];
+}
+
+const { hexagram } = Astro.props;
+
+if (!hexagram) {
+  return Astro.redirect('/hexagrams');
+}
+
+const upperTrigram = getTrigramByName(hexagram.upperTrigram);
+const lowerTrigram = getTrigramByName(hexagram.lowerTrigram);
+---
+
+<Layout title={`${hexagram.name} | I Ching`} description={`Hexagram ${hexagram.number}: ${hexagram.name}`}>
+  <div class="py-8 max-w-2xl mx-auto">
+    {/* Header */}
+    <div class="mb-8 text-center">
+      <div class="text-7xl mb-4">{hexagram.unicodeSymbol}</div>
+      <h1 class="title">{hexagram.name}</h1>
+      <p class="text-lg text-muted-text">{hexagram.chineseName}</p>
+      <p class="text-sm text-muted-text mt-2">Hexagram #{hexagram.number}</p>
+    </div>
+
+    {/* Trigrams */}
+    <div class="mb-8 p-6 bg-surface rounded-lg border border-border">
+      <h2 class="subtitle mb-4">Trigrams</h2>
+      <div class="grid grid-cols-2 gap-6">
+        <div class="text-center">
+          <p class="text-sm text-muted-text mb-2">Upper Trigram</p>
+          <div class="text-5xl mb-2">{upperTrigram?.symbol}</div>
+          <p class="font-semibold text-foreground">{upperTrigram?.name}</p>
+          <p class="text-xs text-muted-text">{upperTrigram?.element}</p>
+        </div>
+        <div class="text-center">
+          <p class="text-sm text-muted-text mb-2">Lower Trigram</p>
+          <div class="text-5xl mb-2">{lowerTrigram?.symbol}</div>
+          <p class="font-semibold text-foreground">{lowerTrigram?.name}</p>
+          <p class="text-xs text-muted-text">{lowerTrigram?.element}</p>
+        </div>
+      </div>
+    </div>
+
+    {/* Judgment & Image (Empty for copyright safety) */}
+    <div class="mb-8 p-6 bg-accent/10 rounded-lg border border-accent">
+      <h2 class="subtitle text-accent mb-4">Judgment & Image</h2>
+      <p class="text-sm text-muted-text">
+        Text content will be added here in future updates. Visit the consultation page to receive personalized readings.
+      </p>
+    </div>
+
+    {/* Navigation */}
+    <div class="flex gap-4">
+      <a href="/hexagrams" class="px-4 py-2 bg-button-bg text-button-text rounded-md hover:bg-button-hover transition-colors">
+        ← Back to Hexagrams
+      </a>
+      <a href="/consult" class="px-4 py-2 bg-accent text-white rounded-md hover:bg-accent/90 transition-colors">
+        Consult with this Hexagram
+      </a>
+    </div>
+  </div>
+</Layout>
