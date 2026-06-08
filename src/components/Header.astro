@@ -1,4 +1,6 @@
 ---
+import ThemeToggle from './ThemeToggle.astro';
+
 const links = [
   {
     label: 'home',
@@ -19,17 +21,18 @@ const links = [
 ];
 ---
 
-<header class="fixed top-0 z-50 w-screen h-[85px] bg-white dark:bg-black text-center">
-  <div class="py-3">
-    <a href="/" class="text-gray-800 dark:text-gray-200 text-3xl">
+<header class="fixed top-0 z-50 w-screen h-header-height bg-nav-bg text-center border-b border-border">
+  <div class="py-3 flex items-center justify-between px-4">
+    <a href="/" class="text-foreground text-3xl font-semibold flex-1">
       I ching <span class="text-2xl">online</span>
     </a>
+    <ThemeToggle />
   </div>
   <nav class="relative mx-4">
-    <ul class="flex flex-wrap bg-gray-200 rounded-lg max-w-md mx-auto px-4">
+    <ul class="flex flex-wrap bg-surface rounded-lg max-w-md mx-auto px-4">
       {links.map(({ label, route }) => (
         <li class="flex-auto mx-1">
-          <a href={route} class="text-gray-500 hover:text-gray-900">
+          <a href={route} class="text-muted-text hover:text-accent transition-colors">
             {label}
           </a>
         </li>

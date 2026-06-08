@@ -1,0 +1,59 @@
+---
+// Astro component for theme toggle - no React needed, vanilla JS only
+---
+
+<button
+  id="theme-toggle"
+  class="p-2 rounded-md hover:bg-surface transition-colors"
+  aria-label="Toggle dark mode"
+  title="Toggle light/dark mode"
+>
+  <span class="theme-icon-light">☀️</span>
+  <span class="theme-icon-dark hidden">🌙</span>
+</button>
+
+<script is:inline>
+  const htmlElement = document.documentElement;
+  const themeToggle = document.getElementById('theme-toggle');
+  const lightIcon = document.querySelector('.theme-icon-light');
+  const darkIcon = document.querySelector('.theme-icon-dark');
+
+  function updateThemeIcons() {
+    const isDark = htmlElement.classList.contains('dark');
+    if (isDark) {
+      lightIcon?.classList.add('hidden');
+      darkIcon?.classList.remove('hidden');
+    } else {
+      lightIcon?.classList.remove('hidden');
+      darkIcon?.classList.add('hidden');
+    }
+  }
+
+  // Initialize theme on page load
+  function initializeTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isDark = savedTheme ? savedTheme === 'dark' : prefersDark;
+
+    htmlElement.classList.toggle('dark', isDark);
+    updateThemeIcons();
+  }
+
+  // Toggle theme on button click
+  themeToggle?.addEventListener('click', () => {
+    htmlElement.classList.toggle('dark');
+    const isDark = htmlElement.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    updateThemeIcons();
+  });
+
+  // Initialize on load
+  initializeTheme();
+</script>
+
+<style>
+  .theme-icon-light,
+  .theme-icon-dark {
+    font-size: 1.25rem;
+  }
+</style>

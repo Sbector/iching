@@ -11,16 +11,23 @@ const { title = 'I ching', description = 'An assistant for I ching reading' } = 
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="bg-white dark:bg-black text-black dark:text-white box-border">
+<html lang="en" class="bg-background text-foreground box-border">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <title>{title}</title>
+    
+    {/* Anti-flash script - prevents theme flicker on page load */}
+    <script is:inline>
+      const theme = localStorage.getItem('theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+    </script>
   </head>
-  <body class="max-w-screen overflow-x-hidden">
+  <body class="max-w-screen overflow-x-hidden bg-background text-foreground">
     <Header />
-    <main class="flex flex-col items-center justify-center min-h-[calc(100dvh-85px)] w-screen mt-[85px] p-6">
+    <main class="flex flex-col items-center justify-center min-h-[calc(100dvh-var(--color-header-height))] w-screen mt-header-height p-6">
       <slot />
     </main>
   </body>

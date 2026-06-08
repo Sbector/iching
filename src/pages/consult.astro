@@ -9,9 +9,9 @@ const description = 'Consult the I ching with our virtual coin tossing tool';
 <Layout {title} {description}>
   <div>
     <h1 class="title">Let consult the I ching!</h1>
-    <label for="question">Enter your question</label>
+    <label for="question" class="text-foreground">Enter your question</label>
     <br />
-    <textarea id="question" type="text" name="question" class="min-w-full bg-gray-200 dark:bg-gray-300 dark:text-black"></textarea>
+    <textarea id="question" type="text" name="question" class="min-w-full bg-surface text-foreground border border-border rounded-md p-2 mt-2"></textarea>
     <div>
       <CoinToss client:load />
     </div>

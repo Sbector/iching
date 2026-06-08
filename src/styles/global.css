@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Color scheme variables */
+:root {
+  --color-bg: #ffffff;
+  --color-bg-elevated: #f3f4f6;
+  --color-bg-nav: #ffffff;
+  --color-text: #111827;
+  --color-text-muted: #6b7280;
+  --color-accent: #16a34a;
+  --color-border: #e5e7eb;
+  --color-button-bg: #e5e7eb;
+  --color-button-text: #6b7280;
+  --color-button-hover: #d1d5db;
+  --color-header-height: 85px;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode */
+html.dark {
+  --color-bg: #0a0a0a;
+  --color-bg-elevated: #1f2937;
+  --color-bg-nav: #0a0a0a;
+  --color-text: #f3f4f6;
+  --color-text-muted: #9ca3af;
+  --color-accent: #22c55e;
+  --color-border: #374151;
+  --color-button-bg: #e5e7eb;
+  --color-button-text: #6b7280;
+  --color-button-hover: #d1d5db;
+  --color-shadow: rgba(0, 0, 0, 0.3);
+}
+
 * {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -12,5 +43,9 @@
   }
   .subtitle {
     @apply text-xl mb-2;
+  }
+  
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
   }
 }
