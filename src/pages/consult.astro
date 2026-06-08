@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CoinToss from '../components/CoinToss.jsx';
+
+const title = 'Consult | I ching';
+const description = 'Consult the I ching with our virtual coin tossing tool';
+---
+
+<Layout {title} {description}>
+  <div>
+    <h1 class="title">Let consult the I ching!</h1>
+    <label for="question">Enter your question</label>
+    <br />
+    <textarea id="question" type="text" name="question" class="min-w-full bg-gray-200 dark:bg-gray-300 dark:text-black"></textarea>
+    <div>
+      <CoinToss client:load />
+    </div>
+  </div>
+</Layout>

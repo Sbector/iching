@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'Instructions | I ching';
+const description = 'Instructions on how to use the I ching consulting tool';
+---
+
+<Layout {title} {description}>
+  <div>
+    <h1 class="title">Instructions</h1>
+
+    <h2 class="subtitle">Prepare your question</h2>
+    <p>
+      You can ask what ever you want to the <i>I ching</i> but you must know that it is convenient to think
+      a real question. You may have to take a time to think what is that you really want to know abot your
+      present situation or your future scenaries.
+    </p>
+    <br />
+    <h2 class="subtitle">Throw coins</h2>
+    <p>
+      Once you have your question ready, you have to throw 6 rounds of three coins. This app, will help you
+      to make it virtually.
+    </p>
+    <a href="/consult">
+      <button class="bg-gray-200 text-gray-500 dark:bg-gray-200 dark:text-gray-500 dark:shadow-gray-500 hover:bg-gray-300 active:shadow-sm shadow-md transition-all rounded-md m-3 px-2">
+        Toss coins
+      </button>
+    </a>
+  </div>
+</Layout>

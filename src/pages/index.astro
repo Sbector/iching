@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'I ching';
+const description = 'An assistant for I ching reading';
+---
+
+<Layout {title} {description}>
+  <div class="text-center">
+    <h1 class="title">Welcome!</h1>
+    <h2 class="subtitle">Do you have a question for the I ching?</h2>
+    <div class="mx-auto">
+      <a href="/consult">
+        <button class="bg-gray-200 text-gray-500 dark:bg-gray-200 dark:text-gray-500 dark:shadow-gray-500 hover:bg-gray-300 active:shadow-sm shadow-md transition-all rounded-md m-3 px-2">
+          I have a question
+        </button>
+      </a>
+      <a href="/about">
+        <button class="bg-gray-200 text-gray-500 dark:bg-gray-200 dark:text-gray-500 dark:shadow-gray-500 hover:bg-gray-300 active:shadow-sm shadow-md transition-all rounded-md m-3 px-2">
+          What is iching?
+        </button>
+      </a>
+    </div>
+  </div>
+</Layout>

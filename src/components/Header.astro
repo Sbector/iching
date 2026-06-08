@@ -1,0 +1,39 @@
+---
+const links = [
+  {
+    label: 'home',
+    route: '/'
+  },
+  {
+    label: 'about',
+    route: '/about'
+  },
+  {
+    label: 'instructions',
+    route: '/instructions'
+  },
+  {
+    label: 'consult',
+    route: '/consult'
+  }
+];
+---
+
+<header class="fixed top-0 z-50 w-screen h-[85px] bg-white dark:bg-black text-center">
+  <div class="py-3">
+    <a href="/" class="text-gray-800 dark:text-gray-200 text-3xl">
+      I ching <span class="text-2xl">online</span>
+    </a>
+  </div>
+  <nav class="relative mx-4">
+    <ul class="flex flex-wrap bg-gray-200 rounded-lg max-w-md mx-auto px-4">
+      {links.map(({ label, route }) => (
+        <li class="flex-auto mx-1">
+          <a href={route} class="text-gray-500 hover:text-gray-900">
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
