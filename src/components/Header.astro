@@ -1,5 +1,6 @@
 ---
 import ThemeToggle from './ThemeToggle.astro';
+import MobileNav from './MobileNav.jsx';
 
 const links = [
   {
@@ -30,13 +31,24 @@ const links = [
 ---
 
 <header class="fixed top-0 z-50 w-screen h-header-height bg-nav-bg text-center border-b border-border">
+  {/* Desktop Header */}
   <div class="py-3 flex items-center justify-between px-4">
-    <a href="/" class="text-foreground text-3xl font-semibold flex-1">
+    <a href="/" class="text-foreground text-3xl font-semibold hidden sm:block">
       I ching <span class="text-2xl">online</span>
     </a>
-    <ThemeToggle />
+    <a href="/" class="text-foreground text-2xl font-semibold sm:hidden flex-1">
+      I ching
+    </a>
+    <div class="flex items-center gap-2">
+      <ThemeToggle />
+      <div class="sm:hidden">
+        <MobileNav client:only="react" links={links} />
+      </div>
+    </div>
   </div>
-  <nav class="relative mx-4">
+
+  {/* Desktop Navigation */}
+  <nav class="relative mx-4 hidden sm:block">
     <ul class="flex flex-wrap bg-surface rounded-lg max-w-md mx-auto px-4">
       {links.map(({ label, route }) => (
         <li class="flex-auto mx-1">
@@ -47,4 +59,6 @@ const links = [
       ))}
     </ul>
   </nav>
+</header>
+  </div>
 </header>
